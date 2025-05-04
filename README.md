@@ -1,4 +1,4 @@
-# Flappy Bird
+# CS 4080 Flappy Bird
 
 A new Flutter project.
 
