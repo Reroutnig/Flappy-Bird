@@ -126,3 +126,124 @@ void _gameOverDialog() {
       },
     );
   }
+
+  void _resetGame() {
+    setState(() {
+      birdYaxis = 0;
+      time = 0;
+      intHeight = birdYaxis;
+      pipeXone = 1;
+      pipeXtwo = pipeXone + 1.5;
+      score = 0;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: () {
+          if (gameStart) {
+            jump();
+          } else {
+            startGame();
+          }
+        },
+        child: Scaffold(
+          body: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Stack(
+                  children: [
+                    AnimatedContainer(
+                      alignment: Alignment(0, birdYaxis),
+                      duration: Duration(milliseconds: 0),
+                      color: Colors.blue,
+                      child: MyBird(),
+                    ),
+                    Container(
+                      alignment: Alignment(0, -0.2),
+                      child: gameStart
+                          ? Text(" ")
+                          : Text("T A P  T O  P L A Y",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white)),
+                    ),
+                    AnimatedContainer(
+                      alignment: Alignment(pipeXone, 1.1),
+                      duration: Duration(milliseconds: 0),
+                      child: MyPipes(
+                        size: 200.0,
+                      ),
+                    ),
+                    AnimatedContainer(
+                      alignment: Alignment(pipeXone, -1.1),
+                      duration: Duration(milliseconds: 0),
+                      child: MyPipes(
+                        size: 200.0,
+                      ),
+                    ),
+                    AnimatedContainer(
+                      alignment: Alignment(pipeXtwo, 1.1),
+                      duration: Duration(milliseconds: 0),
+                      child: MyPipes(
+                        size: 150.0,
+                      ),
+                    ),
+                    AnimatedContainer(
+                      alignment: Alignment(pipeXtwo, -1.1),
+                      duration: Duration(milliseconds: 0),
+                      child: MyPipes(
+                        size: 250.0,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 15,
+                color: Colors.green,
+              ),
+              Expanded(
+                child: Container(
+                  color: Colors.brown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Score:",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text("$score",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 35)),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Best:",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20)),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text("$highScore",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 35)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}
