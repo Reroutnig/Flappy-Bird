@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
       }
     });
   }  
-  
+
 bool _checkCollision() {
   // Bird's position
   double birdTop = birdYaxis - 0.05; // 100 pixels normalized to 0.05
@@ -88,3 +88,41 @@ bool _checkCollision() {
 
   return hitsPipe1 || hitsPipe2 || hitsGround;
 }
+
+void _gameOverDialog() {
+    if (score > highScore) {
+      highScore = score; // Update high score
+    }
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.brown,
+          title: Center(
+            child: Text(
+              "GAME OVER",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          content: Text(
+            "Score: $score",
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            TextButton(
+              child: Text(
+                "PLAY AGAIN",
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+                _resetGame(); // Reset the game
+              },
+              
+            ),
+          ],
+        );
+      },
+    );
+  }
