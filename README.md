@@ -19,7 +19,7 @@ A Flappy Bird clone built with Flutter and Dart, featuring:
    
      git clone https://github.com/Reroutnig/Flappy-Bird.git
    
-     cd flappy-bird-flutter
+     cd Flappy-Bird
    
 3. Install dependencies:
    
