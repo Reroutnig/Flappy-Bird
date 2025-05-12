@@ -16,10 +16,15 @@ A Flappy Bird clone built with Flutter and Dart, featuring:
 
 🚀 **Installation & Setup:**
 1. Clone the repository:
-     git clone https://github.com/yourusername/flappy-bird-flutter.git
+     git clone https://github.com/Reroutnig/Flappy-Bird.git
      cd flappy-bird-flutter
-2. Install dependencies
+2. Install dependencies:
     flutter pub get
-3. Run the app
+3. Run the app:
     flutter run
+
+🎮 **How to Play:**
+- Tap the screen to make the bird jump.
+- Avoid hitting pipes to increase your score.
+- The game ends on collision; press Restart to play again.
 
