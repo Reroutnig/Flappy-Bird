@@ -16,11 +16,17 @@ A Flappy Bird clone built with Flutter and Dart, featuring:
 
 🚀 **Installation & Setup:**
 1. Clone the repository:
+   
      git clone https://github.com/Reroutnig/Flappy-Bird.git
+   
      cd flappy-bird-flutter
-2. Install dependencies:
+   
+3. Install dependencies:
+   
     flutter pub get
-3. Run the app:
+   
+5. Run the app:
+   
     flutter run
 
 🎮 **How to Play:**
