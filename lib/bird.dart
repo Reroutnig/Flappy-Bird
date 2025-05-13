@@ -6,9 +6,7 @@ class MyBird extends StatelessWidget {
     return Container(
       height: 100,
       width: 100,
-      child: Image.asset(
-      'lib/images/flappy.png'
-      ),
+      child: Image.asset('lib/images/flappy.png'),
     );
   }
 }
